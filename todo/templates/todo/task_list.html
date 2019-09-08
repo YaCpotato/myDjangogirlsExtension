@@ -1,13 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <table>
+<div id="todo-area">
+    <table class="table">
         <thead>
-            <th>Name</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>User</th>
-            <th>AddDate</th>
+            <th scope="col">Name</th>
+            <th scope="col">Start</th>
+            <th scope="col">End</th>
+            <th scope="col">User</th>
+            <th scope="col">AddDate</th>
         </thead>
         {% for task in tasks %}
             <tr>
@@ -19,4 +20,5 @@
             </tr>
         {% endfor %}
     </table>
+</div>
 {% endblock content %}
