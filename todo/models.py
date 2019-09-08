@@ -10,3 +10,7 @@ class Task(models.Model):
     days = models.IntegerField()
     created_date = models.DateTimeField(
             default=timezone.now)
+    updated_date = models.DateTimeField(
+            null=True,blank=True)
+    finished_date = models.DateTimeField(
+            null=True,blank=True)
