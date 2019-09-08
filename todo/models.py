@@ -8,6 +8,5 @@ class Task(models.Model):
     name = models.CharField(max_length=64)
     start = models.DateField()
     days = models.IntegerField()
-    child = models.ForeignKey(Task, on_delete=models.CASCADE,null=True,blank=True)
     created_date = models.DateTimeField(
             default=timezone.now)
