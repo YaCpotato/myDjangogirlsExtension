@@ -38,3 +38,12 @@ def task_edit(request, pk):
     else:
         form = TaskForm(instance=task)
     return render(request, 'todo/task_edit.html', {'form': form})
+
+def task_finished(request, pk):
+        task = get_object_or_404(Task, pk=pk)
+        if request.method == "POST":
+            task.finished_date = timezone.now()
+            task.save()
+        
+        tasks = Task.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
+        return render(request, 'todo/task_list.html', {'task': tasks})
